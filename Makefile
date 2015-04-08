@@ -9,7 +9,7 @@ endef
 
 .PHONY: default¬
 default: goatbox
-	$(call green,"[Devbox up so use vagrant ssh or make ssh to step into]")
+	$(call green,"[Browse to http://localhost:8080/WebGoat/]")
 
 .PHONY: goatbox
 goatbox: $(GOAT_JAR)
