@@ -1,0 +1,6 @@
+---
+- hosts: goatbox
+  sudo: yes
+  roles:
+    - webgoat6
+
