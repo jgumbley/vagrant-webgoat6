@@ -11,6 +11,10 @@ Just some simple automation to bring up a local webgoat6. You will need:
 Then:
 
     make
+
+If the webgoat does not come up properly on your box raise an issue..!
+    
+re: Webgoat6, see: http://webgoat.github.io/
     
     
 What then?
