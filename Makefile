@@ -1,10 +1,7 @@
 GOAT_JAR:= WebGoat-6.0.1-war-exec.jar
 
 define green
-	@tput setaf 2
-	@tput bold
-	@echo $1
-	@tput sgr0
+	@tput setaf 2; echo $1; tput sgr0;
 endef
 
 .PHONY: default¬
