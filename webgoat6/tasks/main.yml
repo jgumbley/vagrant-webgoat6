@@ -2,5 +2,9 @@
 - name: do something
   debug: msg="nothing to do"
 
-- include: java.yml
+- name: install java7
+  include: java.yml
+
+- name: create folder for webgoat6
+  file: path=/opt/webgoat6 state=directory
 

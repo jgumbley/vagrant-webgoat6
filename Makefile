@@ -1,3 +1,5 @@
+GOAT_JAR:= WebGoat-6.0.1-war-exec.jar
+
 define green
 	@tput setaf 2
 	@tput bold
@@ -5,24 +7,22 @@ define green
 	@tput sgr0
 endef
 
-ansible-playbook=ansible-playbook -i \
-	.vagrant/provisioners/ansible/inventory/vagrant_ansible_inventory \
-   	--private-key=.vagrant/machines/devbox/virtualbox/private_key -u vagrant
-
 .PHONY: default¬
 default: goatbox
 	$(call green,"[Devbox up so use vagrant ssh or make ssh to step into]")
 
-# Targets to support the local webgoat vagrant VM
-# =================================================
-
 .PHONY: goatbox
-goatbox:
+goatbox: $(GOAT_JAR)
 	vagrant up
 	$(call green,"[Using Vagrant to bring up goat VM success]")
+
+GOAT_URL:= https://webgoat.atlassian.net/builds/browse/WEB-WGM/latestSuccessful/artifact/shared/WebGoat-Embedded-Tomcat/
+$(GOAT_JAR): 
+	curl --silent -O $(GOAT_URL)$(GOAT_JAR)
+	$(call green,"[Downloaded Webgoat jar]")
 
 clean:
 	vagrant halt
 	vagrant destroy -f
+	rm *.jar
 	$(call green,"[Cleaned up]")
-
