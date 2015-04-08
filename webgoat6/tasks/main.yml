@@ -1,10 +1,17 @@
+# vim:ft=ansible:
 ---
-- name: do something
-  debug: msg="nothing to do"
-
 - name: install java7
   include: java.yml
 
 - name: create folder for webgoat6
   file: path=/opt/webgoat6 state=directory
+
+- name: copy webgoat jar into place
+  copy: src=WebGoat-6.0.1-war-exec.jar dest=/opt/webgoat6/WebGoat-6.0.1-war-exec.jar
+
+- name: put the upstart script in place
+  template: src=webgoat6.conf dest=/etc/init/webgoat6.conf
+
+- name: actually start webgoat6
+  service: name=webgoat6 state=started
 

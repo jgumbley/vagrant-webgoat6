@@ -18,7 +18,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         ansible.playbook = "webgoat6.yml"
     end
 
-    goatbox.vm.network "forwarded_port", guest: 80, host: 6174
+    goatbox.vm.network "forwarded_port", guest: 8080, host: 8080
     goatbox.ssh.forward_agent = true
 
     config.vm.synced_folder "../", "/opt/dev/", create: true
