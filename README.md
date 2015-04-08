@@ -16,10 +16,8 @@ Then:
 What then?
 ----------
 
-Download OWASP ZAP and run it on your box. Gotcha: Change the port it binds to 8081 or it will conflict with the Goat. Try the HTML injection exercise at 
+* [Start using WebGoat and working through the exercises!](http://localhost:8080/WebGoat)
 
-* [HTML Injection](http://localhost:8080/WebGoat/attack?Screen=34&menu=1700)
+Download OWASP ZAP and run it on your box. Gotcha: Change the port it binds to 8081 or it will conflict with the Goat.
 
-Try the Cross Site scripting exercise at 
-
-* [XSS](http://localhost:8080/WebGoat/attack?Screen=54&menu=900)
+Recommend the HTML injection excercise for beginners or jump straight to the XSS exercise if you are a Javascript badass.
